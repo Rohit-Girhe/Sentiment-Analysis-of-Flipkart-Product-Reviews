@@ -32,7 +32,11 @@ except LookupError:  # pragma: no cover
     nltk.download("wordnet")
 
 
-_STOPWORDS = set(stopwords.words("english"))
+_BASE_STOPWORDS = set(stopwords.words("english"))
+
+# Keep important negation words so the model can learn patterns like "not good"
+_NEGATION_WORDS = {"no", "not", "nor", "never", "n't"}
+_STOPWORDS = _BASE_STOPWORDS.difference(_NEGATION_WORDS)
 _STEMMER = PorterStemmer()
 _LEMMATIZER = WordNetLemmatizer()
 _PUNCT_TABLE = str.maketrans("", "", string.punctuation)
