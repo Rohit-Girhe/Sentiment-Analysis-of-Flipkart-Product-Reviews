@@ -63,5 +63,7 @@ def index():
 
 if __name__ == "__main__":
     # Run the app: python app/app.py
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    # Debug mode is disabled by default for security; control it via FLASK_DEBUG if needed.
+    debug_enabled = os.environ.get("FLASK_DEBUG") == "1"
+    app.run(host="0.0.0.0", port=5000, debug=debug_enabled)
 
