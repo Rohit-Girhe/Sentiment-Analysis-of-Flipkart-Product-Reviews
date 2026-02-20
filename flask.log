@@ -1,0 +1,30 @@
+[nltk_data] Downloading package wordnet to
+[nltk_data]     C:\Users\rohit\AppData\Roaming\nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.160.185.82:5000
+Press CTRL+C to quit
+127.0.0.1 - - [18/Feb/2026 14:56:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Feb/2026 14:57:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Feb/2026 14:57:28] "GET /Static/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [18/Feb/2026 14:57:28] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [18/Feb/2026 14:59:09] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Feb/2026 14:59:09] "GET /Static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [18/Feb/2026 15:03:41] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Feb/2026 15:03:41] "GET /Static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [18/Feb/2026 15:03:49] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Feb/2026 15:03:49] "GET /Static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [18/Feb/2026 15:03:59] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Feb/2026 15:03:59] "GET /Static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [18/Feb/2026 15:04:00] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Feb/2026 15:04:00] "GET /Static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [18/Feb/2026 15:04:28] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Feb/2026 15:04:29] "GET /Static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [18/Feb/2026 15:04:30] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Feb/2026 15:04:30] "GET /Static/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [18/Feb/2026 15:04:33] "POST / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Feb/2026 15:04:34] "GET /Static/style.css HTTP/1.1" 304 -

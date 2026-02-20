@@ -9,7 +9,8 @@ import joblib
 # Ensure project root is on sys.path so we can import src.* when running app/app.py
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if PROJECT_ROOT not in sys.path:
-    sys.path.append(PROJECT_ROOT)
+    # Insert at the front to avoid collisions with any installed module named `src`
+    sys.path.insert(0, PROJECT_ROOT)
 
 from src.text_preprocessing import clean_text
 
