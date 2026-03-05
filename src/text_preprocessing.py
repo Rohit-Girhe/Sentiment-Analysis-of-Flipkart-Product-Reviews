@@ -88,8 +88,16 @@ def stem_tokens(tokens: Iterable[str]) -> List[str]:
 
 
 def lemmatize_tokens(tokens: Iterable[str]) -> List[str]:
-    """Apply WordNet lemmatization."""
-    return [_LEMMATIZER.lemmatize(t) for t in tokens]
+    """Apply WordNet lemmatization.
+
+    If WordNet encounters an unexpected internal error, fall back
+    to returning the original tokens instead of crashing.
+    """
+    try:
+        return [_LEMMATIZER.lemmatize(t) for t in tokens]
+    except Exception:
+        # Graceful degradation: skip lemmatization rather than fail
+        return list(tokens)
 
 
 def clean_text(
@@ -113,7 +121,13 @@ def clean_text(
     if use_stemming and not use_lemmatization:
         tokens = stem_tokens(tokens)
     elif use_lemmatization:
-        tokens = lemmatize_tokens(tokens)
+        # Wrap lemmatization to avoid runtime errors if NLTK WordNet is
+        # misconfigured on the target machine. In that case we simply fall
+        # back to non-lemmatized tokens instead of failing the request.
+        try:
+            tokens = lemmatize_tokens(tokens)
+        except Exception:
+            pass
 
     return " ".join(tokens)
 
